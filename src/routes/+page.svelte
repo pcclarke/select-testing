@@ -1,27 +1,7 @@
 <script>
-  import Select, { Option } from '@smui/select';
- 
-  const shapes = {
-    'square': 'square',
-    'rectangle': 'square',
-    'thin rectangle': 'thin rectangle',
-    'cylinder': 'circle',
-    'semi-circle': 'semi-circle',
-    'triangle': 'triangle',
-    'arch': 'arch'
-  };
-
-  let value = 'square';
-
-  $: correctHole = shapes[value];
+  import HoleSelect from "$lib/HoleSelect.svelte";
 </script>
 
-<div>
-  <Select bind:value label="What hole does this shape go into?">
-    {#each Object.keys(shapes) as shape}
-      <Option value={shape}>{shape}</Option>
-    {/each}
-  </Select>
+<h1>This is a test of selecting with Svelte Material UI</h1>
 
-  <pre class="status">It goes in the {correctHole} hole!</pre>
-</div>
+<HoleSelect/>
